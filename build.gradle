@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'												
 apply plugin: 'application'
 
-sourceCompatibility = 1.8 //컴파일 할때 적용할 jdk버전을 지정
+sourceCompatibility = 1.8
 
 tasks.withType(JavaCompile){
 	options.encoding = 'UTF-8'

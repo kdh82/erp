@@ -21,7 +21,7 @@ public class ErpLayout extends JFrame implements ActionListener {
 	public ErpLayout() {
 		setTitle("사원DB관리메뉴");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 449, 111);
+		setBounds(200, 200, 449, 111);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 		setContentPane(contentPane);
