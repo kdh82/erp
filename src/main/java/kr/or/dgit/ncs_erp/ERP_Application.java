@@ -4,10 +4,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import kr.or.dgit.ncs_erp.ui.DepartmentFrame;
-import kr.or.dgit.ncs_erp.ui.EmployeeFrame;
-import kr.or.dgit.ncs_erp.ui.TitleFrame;
-
+import kr.or.dgit.ncs_erp.ui.ViewDepartment;
+import kr.or.dgit.ncs_erp.ui.ViewEmployee;
+import kr.or.dgit.ncs_erp.ui.ViewTitle;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -55,15 +54,12 @@ public class ERP_Application extends JFrame implements ActionListener {
 		}
 	}
 	protected void actionPerformedBtnMember(ActionEvent arg0) {
-		EmployeeFrame frame = new EmployeeFrame();
-		frame.setVisible(true);
+		ViewEmployee.getInstance().setVisible(true);
 	}
 	protected void actionPerformedBtnDept(ActionEvent arg0) {
-		DepartmentFrame frame = new DepartmentFrame();
-		frame.setVisible(true);
+		ViewDepartment.getInstance().setVisible(true);
 	}
 	protected void actionPerformedBtnPosition(ActionEvent arg0) {
-		TitleFrame frame = new TitleFrame();
-		frame.setVisible(true);
+		ViewTitle.getInstance().setVisible(true);
 	}
 }

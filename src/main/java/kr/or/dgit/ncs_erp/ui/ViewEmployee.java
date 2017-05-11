@@ -7,18 +7,24 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import kr.or.dgit.ncs_erp.framework.EmployeePanel;
 import java.awt.GridBagLayout;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 @SuppressWarnings("serial")
-public class EmployeeFrame extends JFrame {
+public class ViewEmployee extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
-
-	public EmployeeFrame() {
+	private static final ViewEmployee instance = new ViewEmployee();
+	
+	public static ViewEmployee getInstance() {
+		return instance;
+	}
+	
+	public ViewEmployee() {
 		setTitle("사원 관리");
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(500, 300, 581, 594);

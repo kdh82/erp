@@ -1,59 +1,62 @@
 package kr.or.dgit.ncs_erp.dto;
 
 public class Title {
-	private String no;
-	private String title;
-
-	public Title(String no) {
-		this.no = no;
+	private int tCode;
+	private String tName;
+	
+	public Title() {}
+	
+	public Title(int tCode, String tName) {
+		this.tCode = tCode;
+		this.tName = tName;
 	}
 
-	public Title(String no, String title) {
-		this.no = no;
-		this.title = title;
+	public int gettCode() {
+		return tCode;
 	}
 
-	public String getNo() {
-		return no;
-	}
-
-	public void setNo(String no) {
-		this.no = no;
+	public void settCode(int tCode) {
+		this.tCode = tCode;
 	}
 
 	public String getTitle() {
-		return title;
+		return tName;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitle(String tName) {
+		this.tName = tName;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("%s", title);
+		return String.format("%s, %s]", tCode, tName);
+	}
+	public Object toArray(){
+		return new Object[] {tCode, tName};	
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((no == null) ? 0 : no.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		result = prime * result + tCode;
 		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		Title te = (Title) obj;
-		if (no == te.no && title.equals(te.title)) {
+		if (this == obj)
 			return true;
-		} else {
+		if (obj == null)
 			return false;
-		}
+		if (getClass() != obj.getClass())
+			return false;
+		Title other = (Title) obj;
+		if (tCode != other.tCode)
+			return false;
+		return true;
 	}
-
-	public Object[] toArray() {
-		return new Object[] { no, title };
-	}
+	
+	
+	
 }

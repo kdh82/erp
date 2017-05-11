@@ -1,33 +1,33 @@
 package kr.or.dgit.ncs_erp.dto;
 
 public class Department {
-	private String deptNo;
-	private String deptName;
+	private int dCode;
+	private String dName;
 	private int floor;
-	
-	
-	public Department() {}
 
-	public Department(String deptNo, String deptName, int floor) {
-		this.deptNo = deptNo;
-		this.deptName = deptName;
+	public Department() {
+	}
+
+	public Department(int dCode, String dName, int floor) {
+		this.dCode = dCode;
+		this.dName = dName;
 		this.floor = floor;
 	}
 
-	public String getDeptNo() {
-		return deptNo;
+	public int getdCode() {
+		return dCode;
 	}
 
-	public void setDeptNo(String deptNo) {
-		this.deptNo = deptNo;
+	public void setdCode(int dCode) {
+		this.dCode = dCode;
 	}
 
-	public String getDeptName() {
-		return deptName;
+	public String getdName() {
+		return dName;
 	}
 
-	public void setDeptName(String deptName) {
-		this.deptName = deptName;
+	public void setdName(String dName) {
+		this.dName = dName;
 	}
 
 	public int getFloor() {
@@ -40,14 +40,18 @@ public class Department {
 
 	@Override
 	public String toString() {
-		return String.format("Department [deptNo=%s, deptName=%s, floor=%s]", deptNo, deptName, floor);
+		return String.format("%s, %s, %s", dCode, dName, floor);
+	}
+
+	public Object[] toArray() {
+		return new Object[] { dCode, dName, floor };
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((deptNo == null) ? 0 : deptNo.hashCode());
+		result = prime * result + dCode;
 		return result;
 	}
 
@@ -60,11 +64,9 @@ public class Department {
 		if (getClass() != obj.getClass())
 			return false;
 		Department other = (Department) obj;
-		if (deptNo == null) {
-			if (other.deptNo != null)
-				return false;
-		} else if (!deptNo.equals(other.deptNo))
+		if (dCode != other.dCode)
 			return false;
 		return true;
 	}
+
 }

@@ -57,3 +57,11 @@ drop user user_kdh;
 
 grant select, insert, update, delete 
 on ncs_erp_kdh.* to 'user_kdh' identified by 'rootroot';
+
+INSERT INTO ncs_erp_kdh.department
+(dcode, dname, floor)
+VALUES(0, '', 0);
+
+INSERT INTO ncs_erp_kdh.title
+(tcode, tname)
+VALUES(0, '');

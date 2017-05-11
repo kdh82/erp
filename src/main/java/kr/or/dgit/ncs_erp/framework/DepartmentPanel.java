@@ -57,18 +57,18 @@ public class DepartmentPanel extends JPanel {
 		pFloor.setTitle(" 위   치  ");
 		pFloor.setLayout(new BoxLayout(pFloor, BoxLayout.X_AXIS));
 		
-		JPanel panel_4 = new JPanel();
-		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
-		gbc_panel_4.fill = GridBagConstraints.BOTH;
-		gbc_panel_4.gridx = 0;
-		gbc_panel_4.gridy = 3;
-		panel.add(panel_4, gbc_panel_4);
+		JPanel pDbtn = new JPanel();
+		GridBagConstraints gbc_pDbtn = new GridBagConstraints();
+		gbc_pDbtn.fill = GridBagConstraints.BOTH;
+		gbc_pDbtn.gridx = 0;
+		gbc_pDbtn.gridy = 3;
+		panel.add(pDbtn, gbc_pDbtn);
 		
 		JButton btnSave = new JButton("추 가");
-		panel_4.add(btnSave);
+		pDbtn.add(btnSave);
 		
 		JButton btnCancel = new JButton("취 소");
-		panel_4.add(btnCancel);
+		pDbtn.add(btnCancel);
 
 	}
 

@@ -22,7 +22,7 @@ public class DBCon {
 		if (con == null) {
 			new DBCon(url, user, pwd);
 		}
-		return DBCon.con;
+		return DBCon.con;	
 	}
 
 	public static void closeConnection() {

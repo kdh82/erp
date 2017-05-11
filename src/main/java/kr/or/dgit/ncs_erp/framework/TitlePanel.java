@@ -47,19 +47,19 @@ public class TitlePanel extends JPanel {
 		pTitle.setTitle(" 직책명 ");
 		pTitle.setLayout(new BoxLayout(pTitle, BoxLayout.X_AXIS));
 		
-		JPanel panel_3 = new JPanel();
-		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
-		gbc_panel_3.fill = GridBagConstraints.BOTH;
-		gbc_panel_3.gridx = 0;
-		gbc_panel_3.gridy = 2;
-		panel.add(panel_3, gbc_panel_3);
-		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		JPanel pTbtn = new JPanel();
+		GridBagConstraints gbc_pTbtn = new GridBagConstraints();
+		gbc_pTbtn.fill = GridBagConstraints.BOTH;
+		gbc_pTbtn.gridx = 0;
+		gbc_pTbtn.gridy = 2;
+		panel.add(pTbtn, gbc_pTbtn);
+		pTbtn.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JButton btnSave = new JButton("추 가");
-		panel_3.add(btnSave);
+		pTbtn.add(btnSave);
 		
 		JButton btnCancel = new JButton("취 소");
-		panel_3.add(btnCancel);
+		pTbtn.add(btnCancel);
 
 	}
 
