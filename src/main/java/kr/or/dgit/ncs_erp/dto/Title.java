@@ -10,7 +10,8 @@ public class Title {
 		this.tCode = tCode;
 		this.tName = tName;
 	}
-
+	
+	
 	public int gettCode() {
 		return tCode;
 	}
@@ -19,20 +20,20 @@ public class Title {
 		this.tCode = tCode;
 	}
 
-	public String getTitle() {
+	public String gettName() {
 		return tName;
 	}
 
-	public void setTitle(String tName) {
+	public void settName(String tName) {
 		this.tName = tName;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("%s, %s]", tCode, tName);
+		return String.format("%s, %s", tCode, tName);
 	}
-	public Object toArray(){
-		return new Object[] {tCode, tName};	
+	public Object[] toArray(){
+		return new Object[] {String.format("T%03d", tCode), tName};	
 	}
 
 	@Override

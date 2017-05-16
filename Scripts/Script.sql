@@ -64,4 +64,8 @@ VALUES(0, '', 0);
 
 INSERT INTO ncs_erp_kdh.title
 (tcode, tname)
-VALUES(0, '');
+VALUES(1, '사장'),
+(2, '부장'),
+(3, '과장'),
+(4, '대리'),
+(5, '사원');

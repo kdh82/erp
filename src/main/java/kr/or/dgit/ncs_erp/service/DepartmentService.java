@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import kr.or.dgit.ncs_erp.MybatisSqlSessionFactory;
 import kr.or.dgit.ncs_erp.dao.DepartmentMapper;
 import kr.or.dgit.ncs_erp.dao.DepartmentMapperImpl;
+import kr.or.dgit.ncs_erp.dao.TitleMapper;
+import kr.or.dgit.ncs_erp.dao.TitleMapperImpl;
 import kr.or.dgit.ncs_erp.dto.Department;
 
 public class DepartmentService {
@@ -61,4 +63,5 @@ public class DepartmentService {
 
 		}
 	}
+
 }

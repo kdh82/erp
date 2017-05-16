@@ -8,23 +8,20 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.BoxLayout;
+import java.awt.Component;
+import java.awt.GridLayout;
 
 @SuppressWarnings("serial")
 public class CompPanel extends JPanel {
 	protected JPanel pValue;
-	private GridBagConstraints gbConstraints;
 	private JLabel lblTitle;
 
 	public CompPanel() {
-		gbConstraints = new GridBagConstraints();
-		
-		GridBagLayout gbl = new GridBagLayout();
-		gbl.columnWeights = new double[]{0.0, 1.0};
-		gbl.columnWidths = new int[]{100, 200};
-		setLayout(gbl);
 		
 		lblTitle = new JLabel("New label");
-		lblTitle.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
 		addComponentToFrame(lblTitle,0,0,1,1,1.0,1.0,GridBagConstraints.BOTH, GridBagConstraints.WEST);
 
 		pValue = new JPanel();
@@ -35,22 +32,13 @@ public class CompPanel extends JPanel {
 		lblTitle.setText(title);
 	}
 	
-	public JPanel getValueComp() {
+	public JPanel getValue() {
 		return pValue;
 	}
 
 	private void addComponentToFrame(JComponent comp, int x, int y, int width, int height, double weightx, double weighty, int fill, int anchor){
-//		gbConstraints.ipady = 10;  //컴포넌트 내  여백 padding
-//		gbConstraints.ipadx = 20;  //컴포넌트 내  여백 padding
-		gbConstraints.insets = new Insets(0, 5, 0, 5);//컴포넌트간여백
-		gbConstraints.fill = fill; 
-		gbConstraints.gridx = x;
-		gbConstraints.gridy = y;
-		gbConstraints.gridwidth = width;
-		gbConstraints.gridheight = height;
-		gbConstraints.weightx = weightx;
-		gbConstraints.weighty = weighty;
-		add(comp, gbConstraints);
+		setLayout(new GridLayout(0, 2, 0, 0));
+		add(comp);
 	}
 
 }

@@ -9,6 +9,8 @@ public interface TitleMapper {
 	int deleteTitle(Title title);
 	int updateTitle(Title title);
 	
-	List<Title> selectTitleAll();
-	List<Title> selectTitleOne(); 
+	int selectByAllCnt();
+	
+	Title selectTitleOne(Title title);
+	List<Title> selectTitleAll(); 
 }

@@ -7,7 +7,10 @@ import org.apache.ibatis.session.SqlSession;
 import kr.or.dgit.ncs_erp.MybatisSqlSessionFactory;
 import kr.or.dgit.ncs_erp.dao.DepartmentMapper;
 import kr.or.dgit.ncs_erp.dao.DepartmentMapperImpl;
+import kr.or.dgit.ncs_erp.dao.TitleMapper;
+import kr.or.dgit.ncs_erp.dao.TitleMapperImpl;
 import kr.or.dgit.ncs_erp.dto.Department;
+import kr.or.dgit.ncs_erp.dto.Title;
 
 public class TitleService {
 	private static final TitleService instance = new TitleService();
@@ -19,46 +22,51 @@ public class TitleService {
 		return instance;
 	}
 
-	public int insertDepartment(Department department) {
+	public int insertTitle(Title title) {
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
-			DepartmentMapper departmentMapper = new DepartmentMapperImpl(sqlSession);
-			int res = departmentMapper.insertDepartment(department);
+			TitleMapper titleMapper = new TitleMapperImpl(sqlSession);
+			int res = titleMapper.insertTitle(title);
 			sqlSession.commit();
 			return res;
 		}
 	}
 
-	public int deleteDepartment(Department department) {
+	public int deleteTitle(Title title) {
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
-			DepartmentMapper departmentMapper = new DepartmentMapperImpl(sqlSession);
-			int res = departmentMapper.deleteDepartment(department);
+			TitleMapper titleMapper = new TitleMapperImpl(sqlSession);
+			int res = titleMapper.deleteTitle(title);
 			sqlSession.commit();
 			return res;
 		}
 	}
 
-	public int updateDepartment(Department department) {
+	public int updateTitle(Title title) {
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
-			DepartmentMapper departmentMapper = new DepartmentMapperImpl(sqlSession);
-			int res = departmentMapper.updateDepartment(department);
+			TitleMapper titleMapper = new TitleMapperImpl(sqlSession);
+			int res = titleMapper.updateTitle(title);
 			sqlSession.commit();
 			return res;
 		}
 	}
 
-	public List<Department> selectDepartmentAll() {
+	public static Title selectTitleOne(Title title) {
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
-			DepartmentMapper departmentMapper = new DepartmentMapperImpl(sqlSession);
-			return departmentMapper.selectDepartmentAll();
+			TitleMapper titleMapper = new TitleMapperImpl(sqlSession);
+			return titleMapper.selectTitleOne(title);
 
 		}
 	}
-
-	public List<Department> selectOne() {
+	public List<Title> selectTitleAll() {
 		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
-			DepartmentMapper departmentMapper = new DepartmentMapperImpl(sqlSession);
-			return departmentMapper.selectOne();
+			TitleMapper titleMapper = new TitleMapperImpl(sqlSession);
+			return titleMapper.selectTitleAll();
 
+		}
+	}
+	public int selectByAllCnt(){
+		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
+			TitleMapper titleMapper = new TitleMapperImpl(sqlSession);
+			return titleMapper.selectByAllCnt();
 		}
 	}
 }

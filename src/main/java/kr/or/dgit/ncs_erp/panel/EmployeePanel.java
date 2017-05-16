@@ -1,12 +1,16 @@
-package kr.or.dgit.ncs_erp.framework;
+package kr.or.dgit.ncs_erp.panel;
 
 import javax.swing.JPanel;
 
 import kr.or.dgit.ncs_erp.dto.Department;
 import kr.or.dgit.ncs_erp.dto.Title;
+import kr.or.dgit.ncs_erp.framework.ComboBoxPanel;
+import kr.or.dgit.ncs_erp.framework.RadioBtnPanel;
+import kr.or.dgit.ncs_erp.framework.SpinnerPanel;
+import kr.or.dgit.ncs_erp.framework.TextFieldFormatPanel;
+import kr.or.dgit.ncs_erp.framework.TextFieldPanel;
 
 import java.awt.GridLayout;
-import java.util.Date;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -14,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
-public class EmployeePanel extends JPanel implements ActionListener {
+public class EmployeePanel extends JPanel {
 
 	private TextFieldPanel pNo;
 	private TextFieldPanel pName;
@@ -23,20 +27,18 @@ public class EmployeePanel extends JPanel implements ActionListener {
 	private RadioBtnPanel pGender;
 	private ComboBoxPanel<Department> pDept;
 	private TextFieldFormatPanel pJoinDate;
-	private JPanel pEbtn;
-	private JButton btnSave;
-	private JButton btnCancel;
 
 	public EmployeePanel() {
 		setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JPanel panel = new JPanel();
 		add(panel);
-		panel.setLayout(new GridLayout(8, 0, 0, 5));
+		panel.setLayout(new GridLayout(7, 0, 0, 5));
 		
 		pNo = new TextFieldPanel();
 		panel.add(pNo);
 		pNo.setTitle(" 번    호 ");
+		pNo.getTf().setEditable(false);
 		pNo.setLayout(new BoxLayout(pNo, BoxLayout.X_AXIS));
 		
 		pName = new TextFieldPanel();
@@ -69,16 +71,6 @@ public class EmployeePanel extends JPanel implements ActionListener {
 		panel.add(pJoinDate);
 		pJoinDate.setTitle(" 입사일 ");
 		pJoinDate.setLayout(new BoxLayout(pJoinDate, BoxLayout.X_AXIS));
-		
-		pEbtn = new JPanel();
-		panel.add(pEbtn);
-		
-		btnSave = new JButton("추 가");
-		pEbtn.add(btnSave);
-		
-		btnCancel = new JButton("취 소");
-		btnCancel.addActionListener(this);
-		pEbtn.add(btnCancel);
 
 	}
 /*	protected void initField() {
@@ -95,13 +87,5 @@ public class EmployeePanel extends JPanel implements ActionListener {
 		pGender.setSelectedItem("남");
 		pDept.setSelectedIndex(0);
 		pJoinDate.setTfValue("");
-	}
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btnCancel) {
-			actionPerformedBtnCancel(e);
-		}
-	}
-	protected void actionPerformedBtnCancel(ActionEvent e) {
-		clear();
 	}
 }

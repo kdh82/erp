@@ -9,9 +9,14 @@ import org.apache.ibatis.session.SqlSession;
 import kr.or.dgit.ncs_erp.dto.Title;
 
 public class TitleMapperImpl implements TitleMapper {
-	private String namespace = "kr.or.dgit.ncs_erp.dao.TitleMapper. ";
-	private static final Log log = LogFactory.getLog(TitleMapper.class);
+	private String namespace = "kr.or.dgit.ncs_erp.dao.TitleMapper.";
+	private static final Log log = LogFactory.getLog(TitleMapperImpl.class);
 	private SqlSession sqlSession;
+	
+	public TitleMapperImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
+
 	@Override
 	public int insertTitle(Title title) {
 		log.debug("insertTitle()");
@@ -31,15 +36,21 @@ public class TitleMapperImpl implements TitleMapper {
 	}
 
 	@Override
+	public Title selectTitleOne(Title title) {
+		log.debug("selectTitleOne()");
+		return sqlSession.selectOne(namespace + "selectTitleOne", title);
+	}
+
+	@Override
 	public List<Title> selectTitleAll() {
 		log.debug("selectTitleAll()");
 		return sqlSession.selectList(namespace + "selectTitleAll");
 	}
 
 	@Override
-	public List<Title> selectTitleOne() {
-		log.debug("selectTitleOne()");
-		return sqlSession.selectOne(namespace + "selectTitleOne");
+	public int selectByAllCnt() {
+		log.debug("selectByAllCnt()");
+		return sqlSession.selectOne(namespace + "selectByAllCnt");
 	}
 
 }

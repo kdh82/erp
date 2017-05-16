@@ -7,9 +7,9 @@
      	<result property="floor" column="floor"/>
      </resultMap>
      
-     <sql id="insertSql">
- 			INSERT INTO ncs_erp_kdh.department
+     <insert id="insertDepartment" parameterType="Department">
+ 			INSERT INTO department
 			(dcode, dname, floor)
 			VALUES(#{dCode},#{dName},#{floor});
-     </sql>
+     </insert>
 </mapper>
