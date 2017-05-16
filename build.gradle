@@ -22,9 +22,9 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
-
+mainClassName='kr.or.dgit.ncs_erp.main.TestMain'
 jar{
-	mainClassName='kr.or.dgit.ncs_erp.TestMain'
+	
 	baseName='TestMain'
 	appendix='bin'
 	version=1.0
